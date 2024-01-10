@@ -24,3 +24,21 @@ class MainPage:
         browser.element('.ControlInput-module__input__error_2jXOB').should(have.text('Неверное сочетание логина и '
                                                                                      'пароля'))
         return self
+
+    def search_book_by_title(self, book):
+        browser.element('input[data-test-id="header__search-input--desktop"]').should(be.visible).type(book.name)
+        browser.element('button[data-test-id="header__search-button--desktop"]').should(be.visible).click()
+        return self
+
+    def book_with_specified_title_must_be_found(self):
+        browser.element('a[data-test-id="art__title--desktop"]').should(have.text('Семь сестер'))
+        return self
+
+    def search_book_by_author(self, book):
+        browser.element('input[data-test-id="header__search-input--desktop"]').should(be.visible).type(book.author)
+        browser.element('button[data-test-id="header__search-button--desktop"]').should(be.visible).click()
+        return self
+
+    def book_with_specified_author_must_be_found(self, book):
+        browser.element('a[data-test-id="art__authorName--desktop"]').should(have.text(book.author))
+        return self

@@ -1,15 +1,16 @@
 import allure
-import pytest
 
 from data.books import Book
 from pages.book_page import BookPage
 from pages.cart_page import CartPage
 
 
-@allure.tag("web")
+@allure.epic('Remove book from cart')
 @allure.label("owner", "flowerfrog")
 @allure.feature("Checking whether a book has been removed from cart")
-@pytest.mark.web
+@allure.tag('regress', 'web', 'normal')
+@allure.severity('normal')
+@allure.label('layer', 'web')
 def test_removing_book_from_cart():
     book_page = BookPage()
     cart_page = CartPage()
@@ -37,10 +38,12 @@ def test_removing_book_from_cart():
         cart_page.book_must_be_removed_from_cart()
 
 
-@allure.tag("web")
+@allure.epic('Remove book from cart')
 @allure.label("owner", "flowerfrog")
 @allure.feature("Checking whether a book has been removed from cart")
-@pytest.mark.web
+@allure.tag('regress', 'web', 'normal')
+@allure.severity('normal')
+@allure.label('layer', 'web')
 def test_removing_book_from_cart_and_adding_to_favorites():
     book_page = BookPage()
     cart_page = CartPage()

@@ -1,14 +1,14 @@
 import allure
-import pytest
-
 from data.books import Book
 from pages.book_page import BookPage
 
 
-@allure.tag("web")
+@allure.epic('Move book to/from favorites')
 @allure.label("owner", "flowerfrog")
 @allure.feature("Checking whether a book has been added or removed from favorites")
-@pytest.mark.web
+@allure.tag('regress', 'web', 'normal')
+@allure.severity('normal')
+@allure.label('layer', 'web')
 def test_adding_book_to_favorites():
     book_page = BookPage()
 
@@ -29,10 +29,12 @@ def test_adding_book_to_favorites():
         book_page.book_must_be_added_to_favorites(book)
 
 
-@allure.tag("web")
+@allure.epic('Move book to/from favorites')
 @allure.label("owner", "flowerfrog")
 @allure.feature("Checking whether a book has been added or removed from favorites")
-@pytest.mark.web
+@allure.tag('regress', 'web', 'normal')
+@allure.severity('normal')
+@allure.label('layer', 'web')
 def test_removing_book_from_favorites():
     book_page = BookPage()
 

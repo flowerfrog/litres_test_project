@@ -1,14 +1,16 @@
 import allure
-import pytest
 
 from data.books import Book
 from pages.main_page import MainPage
 
 
-@allure.tag("web")
+@allure.epic('Search')
 @allure.label("owner", "flowerfrog")
 @allure.feature("Checking the book search on the main page")
-@pytest.mark.web
+@allure.label('microservice', 'Search')
+@allure.tag('regress', 'web', 'normal')
+@allure.severity('normal')
+@allure.label('layer', 'web')
 def test_searching_of_book_by_title():
     main_page = MainPage()
 
@@ -29,10 +31,13 @@ def test_searching_of_book_by_title():
         main_page.book_with_specified_title_must_be_found()
 
 
-@allure.tag("web")
+@allure.epic('Search')
 @allure.label("owner", "flowerfrog")
 @allure.feature("Checking the book search on the main page")
-@pytest.mark.web
+@allure.label('microservice', 'Search')
+@allure.tag('regress', 'web', 'normal')
+@allure.severity('normal')
+@allure.label('layer', 'web')
 def test_searching_of_book_by_author():
     main_page = MainPage()
 

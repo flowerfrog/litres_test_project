@@ -1,14 +1,14 @@
 import allure
-import pytest
-
 from data.books import Book
 from pages.book_page import BookPage
 
 
-@allure.tag("web")
+@allure.epic('Add book to cart')
 @allure.label("owner", "flowerfrog")
 @allure.feature("Checking whether a book has been added to cart")
-@pytest.mark.web
+@allure.tag('regress', 'web', 'normal')
+@allure.severity('normal')
+@allure.label('layer', 'web')
 def test_adding_book_to_cart():
     book_page = BookPage()
 
@@ -29,10 +29,12 @@ def test_adding_book_to_cart():
         book_page.book_must_be_added_to_cart(book)
 
 
-@allure.tag("web")
+@allure.epic('Add book to cart')
 @allure.label("owner", "flowerfrog")
 @allure.feature("Checking whether a books has been added to cart")
-@pytest.mark.web
+@allure.tag('regress', 'web', 'normal')
+@allure.severity('normal')
+@allure.label('layer', 'web')
 def test_adding_books_to_cart():
     book_page = BookPage()
 

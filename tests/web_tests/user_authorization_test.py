@@ -1,6 +1,7 @@
 import os
 
 import allure
+import pytest
 from dotenv import load_dotenv
 
 from data.users import User
@@ -10,6 +11,7 @@ from pages.main_page import MainPage
 @allure.tag("web")
 @allure.label("owner", "flowerfrog")
 @allure.feature("Checking the authorization of the user")
+@pytest.mark.web
 def test_authorization_registered_user():
     main_page = MainPage()
 
@@ -33,6 +35,7 @@ def test_authorization_registered_user():
 @allure.tag("web")
 @allure.label("owner", "flowerfrog")
 @allure.feature("Checking the authorization of the user")
+@pytest.mark.web
 def test_authorization_unregistered_user():
     main_page = MainPage()
 

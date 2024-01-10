@@ -1,4 +1,6 @@
 import allure
+import pytest
+
 from data.books import Book
 from pages.book_page import BookPage
 from pages.cart_page import CartPage
@@ -7,6 +9,7 @@ from pages.cart_page import CartPage
 @allure.tag("web")
 @allure.label("owner", "flowerfrog")
 @allure.feature("Checking whether a book has been removed from cart")
+@pytest.mark.web
 def test_removing_book_from_cart():
     book_page = BookPage()
     cart_page = CartPage()
@@ -37,6 +40,7 @@ def test_removing_book_from_cart():
 @allure.tag("web")
 @allure.label("owner", "flowerfrog")
 @allure.feature("Checking whether a book has been removed from cart")
+@pytest.mark.web
 def test_removing_book_from_cart_and_adding_to_favorites():
     book_page = BookPage()
     cart_page = CartPage()

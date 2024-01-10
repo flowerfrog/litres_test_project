@@ -1,4 +1,6 @@
 import allure
+import pytest
+
 from data.books import Book
 from pages.main_page import MainPage
 
@@ -6,6 +8,7 @@ from pages.main_page import MainPage
 @allure.tag("web")
 @allure.label("owner", "flowerfrog")
 @allure.feature("Checking the book search on the main page")
+@pytest.mark.web
 def test_searching_of_book_by_title():
     main_page = MainPage()
 
@@ -29,6 +32,7 @@ def test_searching_of_book_by_title():
 @allure.tag("web")
 @allure.label("owner", "flowerfrog")
 @allure.feature("Checking the book search on the main page")
+@pytest.mark.web
 def test_searching_of_book_by_author():
     main_page = MainPage()
 

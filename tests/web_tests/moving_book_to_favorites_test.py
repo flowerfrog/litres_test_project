@@ -1,4 +1,6 @@
 import allure
+import pytest
+
 from data.books import Book
 from pages.book_page import BookPage
 
@@ -6,6 +8,7 @@ from pages.book_page import BookPage
 @allure.tag("web")
 @allure.label("owner", "flowerfrog")
 @allure.feature("Checking whether a book has been added or removed from favorites")
+@pytest.mark.web
 def test_adding_book_to_favorites():
     book_page = BookPage()
 
@@ -29,6 +32,7 @@ def test_adding_book_to_favorites():
 @allure.tag("web")
 @allure.label("owner", "flowerfrog")
 @allure.feature("Checking whether a book has been added or removed from favorites")
+@pytest.mark.web
 def test_removing_book_from_favorites():
     book_page = BookPage()
 

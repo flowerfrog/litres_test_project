@@ -32,3 +32,24 @@ class BookPage:
         browser.element('div:nth-child(2) > div.Cart-module__bookCard__author_20vL8').should(have.text(book1.author))
         browser.element('div:nth-child(2) > div.Cart-module__bookCard__price_336CO').should(have.text(book1.price))
         return self
+
+    def adding_book_to_favorites(self):
+        browser.element('ul > li:nth-child(2) > button > div').should(be.visible).click()
+        return self
+
+    def book_must_be_added_to_favorites(self, book):
+        browser.open("my-books/liked/")
+        browser.element('a[data-test-id="art__title--desktop"]').should(have.text(book.name))
+        browser.element('a[data-test-id="art__authorName--desktop"]').should(have.text(book.author))
+        return self
+
+    def removing_book_from_favorites(self):
+        browser.open("my-books/liked/")
+        browser.element('div.ArtV2Default-module__like_button_1VLId > div').should(be.visible).click()
+        browser.element('//*[@id=":r4:"]/div/div/div[3]').should(be.visible).click()
+        return self
+
+    def book_must_be_removed_from_favorites(self):
+        browser.element('.EmptyState-module__empty__content_2lpJ-').should(have.text('Здесь будет все, что вы '
+                                                                                     'отложите на потом'))
+        return self

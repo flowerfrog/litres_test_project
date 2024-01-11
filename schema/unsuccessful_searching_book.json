@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "integer"
+    },
+    "error": {
+      "type": "null"
+    },
+    "payload": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {}
+        },
+        "extra": {
+          "type": "object",
+          "properties": {
+            "counters": {
+              "type": "object",
+              "properties": {
+                "all": {
+                  "type": "integer"
+                },
+                "text_book": {
+                  "type": "integer"
+                },
+                "audiobook": {
+                  "type": "integer"
+                },
+                "person": {
+                  "type": "integer"
+                },
+                "collection": {
+                  "type": "integer"
+                },
+                "series": {
+                  "type": "integer"
+                },
+                "genre": {
+                  "type": "integer"
+                },
+                "tag": {
+                  "type": "integer"
+                },
+                "podcast_episode": {
+                  "type": "integer"
+                },
+                "podcast": {
+                  "type": "integer"
+                },
+                "publisher": {
+                  "type": "integer"
+                },
+                "books_filtered_by_libraries": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "all",
+                "text_book",
+                "audiobook",
+                "person",
+                "collection",
+                "series",
+                "genre",
+                "tag",
+                "podcast_episode",
+                "podcast",
+                "publisher",
+                "books_filtered_by_libraries"
+              ]
+            },
+            "pagination": {
+              "type": "object",
+              "properties": {
+                "next_offset": {
+                  "type": "null"
+                }
+              },
+              "required": [
+                "next_offset"
+              ]
+            },
+            "applied_correction": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "counters",
+            "pagination",
+            "applied_correction"
+          ]
+        },
+        "facets": {
+          "type": "array",
+          "items": {}
+        },
+        "fast_facets": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "data",
+        "extra",
+        "facets",
+        "fast_facets"
+      ]
+    }
+  },
+  "required": [
+    "status",
+    "error",
+    "payload"
+  ]
+}

@@ -6,7 +6,7 @@ from helper.load_schema import load_schema
 from helper.api_requests import api_post
 
 
-@allure.epic('Authorized API')
+@allure.epic('API. Authorized')
 @allure.label("owner", "flowerfrog")
 @allure.feature("Checking the authorization of the user")
 @allure.label('microservice', 'API')
@@ -29,7 +29,7 @@ def test_authorization_registered_user():
     assert result.json()['error'] is None
 
 
-@allure.epic('Authorized API')
+@allure.epic('API. Authorized')
 @allure.label("owner", "flowerfrog")
 @allure.feature("Checking the authorization of the user")
 @allure.label('microservice', 'API')

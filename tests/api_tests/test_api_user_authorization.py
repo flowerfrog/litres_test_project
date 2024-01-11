@@ -16,7 +16,7 @@ from helper.api_requests import api_post
 def test_authorization_registered_user():
     schema = load_schema('successful_authorization.json')
 
-    url = "/foundation/api/auth/login"
+    url = "/auth/login"
     load_dotenv()
     email = os.getenv('USER_EMAIL')
     password = os.getenv('USER_PASSWORD')
@@ -39,7 +39,7 @@ def test_authorization_registered_user():
 def test_authorization_unregistered_user():
     schema = load_schema('unsuccessful_authorization.json')
 
-    url = "/foundation/api/auth/login"
+    url = "/auth/login"
     load_dotenv()
     email = os.getenv('USER_EMAIL')
     invalid_password = os.getenv('UNREGISTERED_USER_PASSWORD')

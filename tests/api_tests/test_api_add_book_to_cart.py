@@ -25,3 +25,4 @@ def test_adding_book_to_cart():
     assert result.json()['payload']['data']['added_art_ids'] == art_ids
     assert result.json()['payload']['data']['failed_art_ids'] == []
 
+

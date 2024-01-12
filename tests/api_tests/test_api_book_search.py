@@ -8,7 +8,6 @@ from helper.api_requests import api_get
 @allure.label("owner", "flowerfrog")
 @allure.feature("Checking the book search on the main page")
 @allure.label('microservice', 'API')
-@allure.label('microservice', 'Search')
 @allure.tag('regress', 'api', 'normal')
 @allure.severity('normal')
 @allure.label('layer', 'api')

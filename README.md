@@ -89,3 +89,16 @@ pytest tests
 #### История запуска тестовых наборов
 ![This is an image](design/image/allure_TestOps_launches.png)
 
+----
+### Интеграция с Jira
+> <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1045">Ссылка на проект в Jira</a>
+
+![This is an image](design/image/jira.png)
+
+----
+### Оповещение о результатах прогона тестов в Telegram
+![This is an image](design/image/tg_notification.png)
+
+----
+### Пример видео прохождения автотеста
+![autotest_gif](design/image/autotest.gif)

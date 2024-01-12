@@ -24,7 +24,18 @@
 <img src="design/icons/python-original.svg" width="50"> <img src="design/icons/pytest.png" width="50"> <img src="design/icons/intellij_pycharm.png" width="50"> <img src="design/icons/selene.png" width="50"> <img src="design/icons/selenoid.png" width="50"> <img src="design/icons/jenkins.png" width="50"> <img src="design/icons/allure_report.png" width="50"> <img src="design/icons/allure_testops.png" width="50"> <img src="design/icons/tg.png" width="50"> <img src="design/icons/jira.png" width="50">
 
 ----
-### Запуск автотестов выполняется на сервере Jenkins
+### Локальный запуск
+> Для локального запуска с дефолтными значениями необходимо выполнить команду:
+```
+python -m venv .venv
+source .venv/bin/activate
+pip install poetry
+poetry install --no-root
+pytest tests
+```
+
+----
+### Удаленный запуск автотестов выполняется на сервере Jenkins
 > <a target="_blank" href="https://jenkins.autotests.cloud/job/LitresTestProject/">Ссылка на проект в Jenkins</a>
 
 #### Параметры сборки

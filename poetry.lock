@@ -32,16 +32,16 @@ pluggy = ">=0.4.0"
 
 [[package]]
 name = "appium-python-client"
-version = "2.11.1"
+version = "3.1.1"
 description = "Python client for Appium"
 optional = false
 python-versions = "*"
 files = [
-    {file = "Appium-Python-Client-2.11.1.tar.gz", hash = "sha256:0e9d3a76f03217add68a9389d5630a7b63355a6bd5ba70711c47ed3463908d33"},
+    {file = "Appium-Python-Client-3.1.1.tar.gz", hash = "sha256:c1e70d4a0a64c1e14e4693a8bd576d9489a9b722ce6be9f2e006c4ae7cb9e77e"},
 ]
 
 [package.dependencies]
-selenium = ">=4.1,<5.0"
+selenium = ">=4.12,<5.0"
 
 [[package]]
 name = "attrs"
@@ -769,4 +769,4 @@ h11 = ">=0.9.0,<1"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "54c78d3c0d6df413b3545fda9527158cd0f726befe51f66d8fc3056fb6a0619d"
+content-hash = "ad5ba718a19fe570d3875d5db021f39c3882e1c0c5ef3670a35ae432739a141d"

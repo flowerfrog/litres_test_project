@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from selene import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from helper import attach
+from helper import attach_web
 
 DEFAULT_BROWSER_VERSION = "100.0"
 
@@ -47,9 +47,9 @@ def setup_browser(request):
 
     yield browser
 
-    attach.add_screenshot(browser)
-    attach.add_logs(browser)
-    attach.add_html(browser)
-    attach.add_video(browser)
+    attach_web.add_screenshot(browser)
+    attach_web.add_logs(browser)
+    attach_web.add_html(browser)
+    attach_web.add_video(browser)
 
     browser.quit()

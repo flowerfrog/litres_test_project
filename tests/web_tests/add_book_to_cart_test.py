@@ -1,6 +1,6 @@
 import allure
 from data.books import Book
-from pages.book_page import BookPage
+from pages.web_pages.book_page import BookPage
 
 
 @allure.epic('Add book to cart')

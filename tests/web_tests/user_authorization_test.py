@@ -3,7 +3,7 @@ import allure
 from dotenv import load_dotenv
 
 from data.users import User
-from pages.main_page import MainPage
+from pages.web_pages.main_page import MainPage
 
 
 @allure.epic('Authorized')

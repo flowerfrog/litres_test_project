@@ -1,14 +1,13 @@
 import allure
 
 from data.books import Book
-from pages.main_page import MainPage
+from pages.web_pages.main_page import MainPage
 
 
 @allure.epic('Search')
 @allure.label("owner", "flowerfrog")
 @allure.feature("Checking the book search on the main page")
 @allure.label('microservice', 'WEB')
-@allure.label('microservice', 'Search')
 @allure.tag('regress', 'web', 'normal')
 @allure.severity('normal')
 @allure.label('layer', 'web')
@@ -36,7 +35,6 @@ def test_searching_of_book_by_title():
 @allure.label("owner", "flowerfrog")
 @allure.feature("Checking the book search on the main page")
 @allure.label('microservice', 'WEB')
-@allure.label('microservice', 'Search')
 @allure.tag('regress', 'web', 'normal')
 @allure.severity('normal')
 @allure.label('layer', 'web')

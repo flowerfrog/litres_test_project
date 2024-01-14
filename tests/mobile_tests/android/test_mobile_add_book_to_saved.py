@@ -32,8 +32,5 @@ def test_adding_book_to_saved(android_mobile_management):
     with allure.step('Go to the Saved tab'):
         book_page.go_to_saved_tab()
 
-    with allure.step('Go to the Saved tab'):
-        book_page.go_to_saved_tab()
-
     with allure.step('Checking that the selected book has been added to Saved'):
         book_page.book_must_be_added_to_saved()

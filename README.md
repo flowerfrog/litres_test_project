@@ -19,6 +19,11 @@
 - [x] Поиск книги
 - [x] Добавление книги в корзину
 
+### Mobile-тесты
+- [x] Поиск книги(успешный и неуспешный)
+- [x] Добавление книги в Сохраненное
+- [x] Удаление книги из Сохраненного
+
 ----
 ### Проект реализован с использованием:
 <img src="design/icons/python-original.svg" width="50"> <img src="design/icons/pytest.png" width="50"> <img src="design/icons/intellij_pycharm.png" width="50"> <img src="design/icons/selene.png" width="50"> <img src="design/icons/selenoid.png" width="50"> <img src="design/icons/jenkins.png" width="50"> <img src="design/icons/allure_report.png" width="50"> <img src="design/icons/allure_testops.png" width="50"> <img src="design/icons/tg.png" width="50"> <img src="design/icons/jira.png" width="50">
@@ -66,6 +71,8 @@ pytest tests
 ![This is an image](design/image/example_test_ui_allure.png)
 #### Пример отчета о прохождении api-теста
 ![This is an image](design/image/example_test_api_allure.png)
+#### Пример отчета о прохождении mobile-теста
+![This is an image](design/image/example_test_mobile_allure.png)
 
 ----
 ### Полная статистика по прохождению тестпланов, отчёты и приложения к ним хранятся в Allure TestOps
@@ -100,5 +107,8 @@ pytest tests
 ![This is an image](design/image/tg_notification.png)
 
 ----
-### Пример видео прохождения автотеста
+### Пример видео прохождения ui-автотеста
 ![autotest_gif](design/image/autotest.gif)
+
+### Пример видео прохождения mobile-автотеста
+![autotest_gif](design/image/autotest_mobile.gif)

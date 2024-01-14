@@ -28,3 +28,7 @@ class AndroidSearchBookPage:
         (browser.element((AppiumBy.ID, "ru.litres.android:id/tv_books_search_empty_message"))
          .should(have.text('Make sure you entered the search query correctly')))
         return self
+
+    def choosing_book(self):
+        browser.element((AppiumBy.ID, "ru.litres.android:id/bookName")).click()
+        return self

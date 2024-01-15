@@ -1,8 +1,8 @@
 import allure
 
-from litres_test_project.data import Book
-from litres_test_project.pages.web_pages.book_page import BookPage
-from litres_test_project.pages import CartPage
+from litres_test_project.data.books import Book
+from litres_test_project.pages.web_pages.book_page import book_page
+from litres_test_project.pages.web_pages.cart_page import cart_page
 
 
 @allure.epic('Remove book from cart')
@@ -13,8 +13,6 @@ from litres_test_project.pages import CartPage
 @allure.severity('normal')
 @allure.label('layer', 'web')
 def test_removing_book_from_cart():
-    book_page = BookPage()
-    cart_page = CartPage()
 
     book = Book(
         name='Семь сестер. Потерянная сестра',
@@ -47,8 +45,6 @@ def test_removing_book_from_cart():
 @allure.severity('normal')
 @allure.label('layer', 'web')
 def test_removing_book_from_cart_and_adding_to_favorites():
-    book_page = BookPage()
-    cart_page = CartPage()
 
     book = Book(
         name='Семь сестер. Потерянная сестра',

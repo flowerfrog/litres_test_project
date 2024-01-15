@@ -1,7 +1,5 @@
 import os
 import allure
-from dotenv import load_dotenv
-
 from litres_test_project.data.users import User
 from litres_test_project.pages.web_pages.main_page import main_page
 
@@ -15,7 +13,6 @@ from litres_test_project.pages.web_pages.main_page import main_page
 @allure.label('layer', 'web')
 def test_authorization_registered_user():
 
-    load_dotenv()
     user = User(
         name='Alexandra Osennyaya',
         email=os.getenv('USER_EMAIL'),
@@ -41,7 +38,6 @@ def test_authorization_registered_user():
 @allure.label('layer', 'web')
 def test_authorization_unregistered_user():
 
-    load_dotenv()
     user = User(
         name='test',
         email=os.getenv('UNREGISTERED_USER_EMAIL'),

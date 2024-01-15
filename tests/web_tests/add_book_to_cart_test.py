@@ -1,6 +1,6 @@
 import allure
-from litres_test_project.data import Book
-from litres_test_project.pages.web_pages.book_page import BookPage
+from litres_test_project.data.books import Book
+from litres_test_project.pages.web_pages.book_page import book_page
 
 
 @allure.epic('Add book to cart')
@@ -11,7 +11,6 @@ from litres_test_project.pages.web_pages.book_page import BookPage
 @allure.severity('normal')
 @allure.label('layer', 'web')
 def test_adding_book_to_cart():
-    book_page = BookPage()
 
     book = Book(
         name='Семь сестер. Потерянная сестра',
@@ -38,7 +37,6 @@ def test_adding_book_to_cart():
 @allure.severity('normal')
 @allure.label('layer', 'web')
 def test_adding_books_to_cart():
-    book_page = BookPage()
 
     book1 = Book(
         name='Семь сестер. Потерянная сестра',

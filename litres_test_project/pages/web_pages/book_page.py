@@ -53,3 +53,6 @@ class BookPage:
         browser.element('.EmptyState-module__empty__content_2lpJ-').should(have.text('Здесь будет все, что вы '
                                                                                      'отложите на потом'))
         return self
+
+
+book_page = BookPage()

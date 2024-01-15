@@ -1,13 +1,13 @@
+import os
 import allure
 import requests
-from tests.mobile_tests import config
 from selene import browser
 
 
 def bstack_video(session_id):
     bstack_session = requests.get(
         f'https://api.browserstack.com/app-automate/sessions/{session_id}.json',
-        auth=(config.username, config.access_key)
+        auth=(os.getenv('USER_NAME'), os.getenv('ACCESS_KEY'))
     ).json()
 
     video_url = bstack_session['automation_session']['video_url']

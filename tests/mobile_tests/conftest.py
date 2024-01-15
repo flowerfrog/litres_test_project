@@ -1,11 +1,25 @@
+import os
+
 import allure
 import allure_commons
 import pytest
-from tests.mobile_tests import config
+from dotenv import load_dotenv
 from appium.options.android import UiAutomator2Options
 from selene import browser, support
 from appium import webdriver
 from litres_test_project.helper import attach_mobile
+
+
+@pytest.fixture(scope="session", autouse=True)
+def load_env():
+    load_dotenv()
+
+
+context = os.getenv('context', 'bstack')
+username = os.getenv('USER_NAME')
+access_key = os.getenv('ACCESS_KEY')
+remote_browser_url = os.getenv('REMOTE_BROWSER_URL')
+bstack_app_id = os.getenv('BSTACK_APP_ID')
 
 
 @pytest.fixture(scope='function')
@@ -17,7 +31,7 @@ def android_mobile_management():
         "deviceName": "Samsung Galaxy S22 Ultra",
 
         # Set URL of the application under test
-        "app": "bs://0e40d78b8dd17360e059300c7b471a9477db3d5d",
+        "app": f"bs://{bstack_app_id}",
 
         # Set other BrowserStack capabilities
         'bstack:options': {
@@ -26,14 +40,14 @@ def android_mobile_management():
             "sessionName": "BStack litres_test",
 
             # Set your access credentials
-            "userName": config.username,
-            "accessKey": config.access_key
+            "userName": username,
+            "accessKey": access_key
         }
     })
 
     with allure.step('setup app session'):
         browser.config.driver = webdriver.Remote(
-            config.remote_browser_url,
+            remote_browser_url,
             options=options
         )
 
@@ -44,9 +58,9 @@ def android_mobile_management():
 
     yield
 
-    attach_mobile.screenshot( )
+    attach_mobile.screenshot()
 
-    attach_mobile.page_source_xml( )
+    attach_mobile.page_source_xml()
 
     session_id = browser.driver.session_id
 

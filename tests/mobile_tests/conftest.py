@@ -5,7 +5,7 @@ from tests.mobile_tests import config
 from appium.options.android import UiAutomator2Options
 from selene import browser, support
 from appium import webdriver
-from helper import attach_mobile
+from litres_test_project.helper import attach_mobile
 
 
 @pytest.fixture(scope='function')
@@ -44,9 +44,9 @@ def android_mobile_management():
 
     yield
 
-    attach_mobile.screenshot()
+    attach_mobile.screenshot( )
 
-    attach_mobile.page_source_xml()
+    attach_mobile.page_source_xml( )
 
     session_id = browser.driver.session_id
 

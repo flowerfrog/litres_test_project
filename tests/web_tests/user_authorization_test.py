@@ -2,8 +2,8 @@ import os
 import allure
 from dotenv import load_dotenv
 
-from data.users import User
-from pages.web_pages.main_page import MainPage
+from litres_test_project.data.users import User
+from litres_test_project.pages.web_pages.main_page import MainPage
 
 
 @allure.epic('Authorized')

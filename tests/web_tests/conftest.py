@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from selene import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from helper import attach_web
+from litres_test_project.helper import attach_web
 
 DEFAULT_BROWSER_VERSION = "100.0"
 

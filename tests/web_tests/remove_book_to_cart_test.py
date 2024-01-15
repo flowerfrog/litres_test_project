@@ -1,8 +1,8 @@
 import allure
 
-from data.books import Book
-from pages.web_pages.book_page import BookPage
-from pages.web_pages.cart_page import CartPage
+from litres_test_project.data import Book
+from litres_test_project.pages.web_pages.book_page import BookPage
+from litres_test_project.pages import CartPage
 
 
 @allure.epic('Remove book from cart')

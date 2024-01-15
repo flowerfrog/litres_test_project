@@ -2,8 +2,8 @@ import os
 import allure
 from dotenv import load_dotenv
 import jsonschema
-from helper.load_schema import load_schema
-from helper.api_requests import api_post
+from litres_test_project.helper import load_schema
+from litres_test_project.helper import api_post
 
 
 @allure.epic('API. Authorized')

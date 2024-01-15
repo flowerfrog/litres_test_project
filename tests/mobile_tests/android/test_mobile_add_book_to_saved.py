@@ -1,7 +1,7 @@
 import allure
-from pages.mobile_pages.main_page import AndroidMainPage
-from pages.mobile_pages.books_to_read_page import AndroidSearchBookPage
-from pages.mobile_pages.book_page import AndroidBookPage
+from litres_test_project.pages.mobile_pages import AndroidMainPage
+from litres_test_project.pages.mobile_pages import AndroidSearchBookPage
+from litres_test_project.pages.mobile_pages.book_page import AndroidBookPage
 
 
 @allure.epic('Add book to saved')

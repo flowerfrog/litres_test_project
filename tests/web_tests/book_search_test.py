@@ -1,7 +1,7 @@
 import allure
 
-from data.books import Book
-from pages.web_pages.main_page import MainPage
+from litres_test_project.data import Book
+from litres_test_project.pages.web_pages.main_page import MainPage
 
 
 @allure.epic('Search')

@@ -1,7 +1,7 @@
 import allure
-from litres_test_project.pages.mobile_pages import AndroidMainPage
-from litres_test_project.pages.mobile_pages import AndroidSearchBookPage
-from litres_test_project.pages.mobile_pages.book_page import AndroidBookPage
+from litres_test_project.pages.mobile_pages.main_page import main_page
+from litres_test_project.pages.mobile_pages.books_to_read_page import book_search_page
+from litres_test_project.pages.mobile_pages.book_page import book_page
 
 
 @allure.epic('Add book to saved')
@@ -10,9 +10,6 @@ from litres_test_project.pages.mobile_pages.book_page import AndroidBookPage
 @allure.severity('normal')
 @allure.label('layer', 'mobile')
 def test_adding_book_to_saved(android_mobile_management):
-    main_page = AndroidMainPage()
-    book_search_page = AndroidSearchBookPage()
-    book_page = AndroidBookPage()
 
     with allure.step('Selecting the application language'):
         main_page.selecting_application_language()

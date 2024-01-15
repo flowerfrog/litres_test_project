@@ -1,6 +1,6 @@
 import allure
-from litres_test_project.data import Book
-from litres_test_project.pages.web_pages.book_page import BookPage
+from litres_test_project.data.books import Book
+from litres_test_project.pages.web_pages.book_page import book_page
 
 
 @allure.epic('Move book to/from favorites')
@@ -11,7 +11,6 @@ from litres_test_project.pages.web_pages.book_page import BookPage
 @allure.severity('normal')
 @allure.label('layer', 'web')
 def test_adding_book_to_favorites():
-    book_page = BookPage()
 
     book = Book(
         name='Семь сестер. Потерянная сестра',
@@ -38,7 +37,6 @@ def test_adding_book_to_favorites():
 @allure.severity('normal')
 @allure.label('layer', 'web')
 def test_removing_book_from_favorites():
-    book_page = BookPage()
 
     book = Book(
         name='Семь сестер. Потерянная сестра',
@@ -58,4 +56,3 @@ def test_removing_book_from_favorites():
 
     with allure.step("Checking that the book has been removed from favorites"):
         book_page.book_must_be_removed_from_favorites()
-

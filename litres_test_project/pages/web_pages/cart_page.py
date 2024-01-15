@@ -19,3 +19,6 @@ class CartPage:
         browser.element('button[data-test-id="cart__listDeleteButton--desktop"] > div').should(be.visible).click()
         browser.element('//*[@id="modal"]/div[2]/div/div/div/div/div[3]/button[2]/div/div/div').should(be.visible).click()
         return self
+
+
+cart_page = CartPage()

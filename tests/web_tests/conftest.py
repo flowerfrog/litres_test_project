@@ -16,6 +16,11 @@ def pytest_addoption(parser):
     )
 
 
+@pytest.fixture(scope="session", autouse=True)
+def load_env():
+    load_dotenv()
+
+
 @pytest.fixture(scope='function', autouse=True)
 def setup_browser(request):
     browser_version = request.config.getoption('--browser_version')

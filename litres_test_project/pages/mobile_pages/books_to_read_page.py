@@ -32,3 +32,6 @@ class AndroidSearchBookPage:
     def choosing_book(self):
         browser.element((AppiumBy.ID, "ru.litres.android:id/bookName")).click()
         return self
+
+
+book_search_page = AndroidSearchBookPage()

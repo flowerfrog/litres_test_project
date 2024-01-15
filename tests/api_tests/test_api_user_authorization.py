@@ -3,6 +3,7 @@ import allure
 import jsonschema
 from litres_test_project.helper.load_schema import load_schema
 from litres_test_project.helper.api_requests import api_post
+import logging
 
 
 @allure.epic('API. Authorized')
@@ -26,6 +27,10 @@ def test_authorization_registered_user():
     jsonschema.validate(result.json(), schema)
     assert result.json()['error'] is None
 
+    logging.info(result.request.url)
+    logging.info(result.status_code)
+    logging.info(result.text)
+
 
 @allure.epic('API. Authorized')
 @allure.label("owner", "flowerfrog")
@@ -48,3 +53,7 @@ def test_authorization_unregistered_user():
     jsonschema.validate(result.json(), schema)
     assert result.json()['error']['type'] == "Unauthorized"
     assert result.json()['error']['title'] == "Incorrect user data"
+
+    logging.info(result.request.url)
+    logging.info(result.status_code)
+    logging.info(result.text)

@@ -1,9 +1,8 @@
 import os
 import allure
-from dotenv import load_dotenv
 import jsonschema
-from litres_test_project.helper import load_schema
-from litres_test_project.helper import api_post
+from litres_test_project.helper.load_schema import load_schema
+from litres_test_project.helper.api_requests import api_post
 
 
 @allure.epic('API. Authorized')
@@ -17,7 +16,6 @@ def test_authorization_registered_user():
     schema = load_schema('successful_authorization.json')
 
     url = "/auth/login"
-    load_dotenv()
     email = os.getenv('USER_EMAIL')
     password = os.getenv('USER_PASSWORD')
     headers = {"Content-Type": "application/json"}
@@ -40,7 +38,6 @@ def test_authorization_unregistered_user():
     schema = load_schema('unsuccessful_authorization.json')
 
     url = "/auth/login"
-    load_dotenv()
     email = os.getenv('USER_EMAIL')
     invalid_password = os.getenv('UNREGISTERED_USER_PASSWORD')
     headers = {"Content-Type": "application/json"}

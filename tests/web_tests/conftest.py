@@ -30,7 +30,7 @@ def setup_browser(request):
     options.add_argument('--disable-dev-shm-usage')
     selenoid_capabilities = {
         "browserName": "chrome",
-        "browserVersion": "100.0",
+        "browserVersion": browser_version,
         "selenoid:options": {
             "enableVNC": True,
             "enableVideo": True

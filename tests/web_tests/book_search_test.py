@@ -1,7 +1,7 @@
 import allure
 
-from litres_test_project.data import Book
-from litres_test_project.pages.web_pages.main_page import MainPage
+from litres_test_project.data.books import Book
+from litres_test_project.pages.web_pages.main_page import main_page
 
 
 @allure.epic('Search')
@@ -12,7 +12,6 @@ from litres_test_project.pages.web_pages.main_page import MainPage
 @allure.severity('normal')
 @allure.label('layer', 'web')
 def test_searching_of_book_by_title():
-    main_page = MainPage()
 
     book = Book(
         name='Семь сестер. Потерянная сестра',
@@ -39,7 +38,6 @@ def test_searching_of_book_by_title():
 @allure.severity('normal')
 @allure.label('layer', 'web')
 def test_searching_of_book_by_author():
-    main_page = MainPage()
 
     book = Book(
         name='',

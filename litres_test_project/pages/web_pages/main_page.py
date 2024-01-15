@@ -42,3 +42,6 @@ class MainPage:
     def book_with_specified_author_must_be_found(self, book):
         browser.element('a[data-test-id="art__authorName--desktop"]').should(have.text(book.author))
         return self
+
+
+main_page = MainPage()

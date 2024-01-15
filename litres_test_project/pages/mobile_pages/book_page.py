@@ -28,3 +28,6 @@ class AndroidBookPage:
         results.should(have.size(1))
         browser.element((AppiumBy.ID, 'ru.litres.android:id/action_button')).should(be.visible)
         return self
+
+
+book_page = AndroidBookPage()

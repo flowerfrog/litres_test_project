@@ -3,7 +3,7 @@ import allure
 from dotenv import load_dotenv
 
 from litres_test_project.data.users import User
-from litres_test_project.pages.web_pages.main_page import MainPage
+from litres_test_project.pages.web_pages.main_page import main_page
 
 
 @allure.epic('Authorized')
@@ -14,7 +14,6 @@ from litres_test_project.pages.web_pages.main_page import MainPage
 @allure.severity('normal')
 @allure.label('layer', 'web')
 def test_authorization_registered_user():
-    main_page = MainPage()
 
     load_dotenv()
     user = User(
@@ -41,7 +40,6 @@ def test_authorization_registered_user():
 @allure.severity('normal')
 @allure.label('layer', 'web')
 def test_authorization_unregistered_user():
-    main_page = MainPage()
 
     load_dotenv()
     user = User(
@@ -58,4 +56,3 @@ def test_authorization_unregistered_user():
 
     with allure.step("Checking that user has not been authorized"):
         main_page.user_must_not_be_authorized()
-

@@ -11,7 +11,15 @@ DEFAULT_BROWSER_VERSION = "100.0"
 
 def pytest_addoption(parser):
     parser.addoption(
+        '--browser',
+        help='Browser for test',
+        choices=['firefox', 'chrome'],
+        default='chrome'
+    )
+    parser.addoption(
         '--browser_version',
+        help='Version of browser',
+        choices=['100.0', '98.0'],
         default='100.0'
     )
 
@@ -23,13 +31,15 @@ def load_env():
 
 @pytest.fixture(scope='function', autouse=True)
 def setup_browser(request):
+    browser_name = request.config.getoption('--browser')
     browser_version = request.config.getoption('--browser_version')
     browser_version = browser_version if browser_version != "" else DEFAULT_BROWSER_VERSION
     options = Options()
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
+
     selenoid_capabilities = {
-        "browserName": "chrome",
+        "browserName": browser_name,
         "browserVersion": browser_version,
         "selenoid:options": {
             "enableVNC": True,

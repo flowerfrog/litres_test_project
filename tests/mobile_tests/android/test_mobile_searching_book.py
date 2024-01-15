@@ -1,6 +1,6 @@
 import allure
-from litres_test_project.pages.mobile_pages import AndroidMainPage
-from litres_test_project.pages.mobile_pages import AndroidSearchBookPage
+from litres_test_project.pages.mobile_pages.main_page import main_page
+from litres_test_project.pages.mobile_pages.books_to_read_page import book_search_page
 
 
 @allure.epic('Search')
@@ -9,8 +9,6 @@ from litres_test_project.pages.mobile_pages import AndroidSearchBookPage
 @allure.severity('normal')
 @allure.label('layer', 'mobile')
 def test_successful_searching_book(android_mobile_management):
-    main_page = AndroidMainPage()
-    book_page = AndroidSearchBookPage()
 
     with allure.step('Selecting the application language'):
         main_page.selecting_application_language()
@@ -19,10 +17,10 @@ def test_successful_searching_book(android_mobile_management):
         main_page.hiding_adult_content()
 
     with allure.step('Type search'):
-        book_page.searching_book()
+        book_search_page.searching_book()
 
     with allure.step('Verify content found'):
-        book_page.book_must_be_found()
+        book_search_page.book_must_be_found()
 
 
 @allure.epic('Search')
@@ -31,8 +29,6 @@ def test_successful_searching_book(android_mobile_management):
 @allure.severity('normal')
 @allure.label('layer', 'mobile')
 def test_unsuccessful_searching_book(android_mobile_management):
-    main_page = AndroidMainPage()
-    book_page = AndroidSearchBookPage()
 
     with allure.step('Selecting the application language'):
         main_page.selecting_application_language()
@@ -41,7 +37,7 @@ def test_unsuccessful_searching_book(android_mobile_management):
         main_page.hiding_adult_content()
 
     with allure.step('Type search'):
-        book_page.searching_non_existent_book()
+        book_search_page.searching_non_existent_book()
 
     with allure.step('Verify content not found'):
-        book_page.book_must_not_be_found()
+        book_search_page.book_must_not_be_found()

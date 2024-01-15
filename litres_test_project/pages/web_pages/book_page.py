@@ -7,20 +7,20 @@ class BookPage:
         return self
 
     def adding_book_to_cart(self):
-        browser.element('button[data-test-id="book__addToCartButton--desktop"]').should(be.visible).click()
-        browser.element('div.Modal-module__content__header_3fkP_ > div > div > svg > use').should(be.visible).click()
+        browser.element('[data-test-id="book__addToCartButton--desktop"]').should(be.visible).click()
+        browser.driver.refresh()
         return self
 
     def book_must_be_added_to_cart(self, book):
         browser.open("my-books/cart/")
-        browser.element('h3[data-test-id="cart__bookCardTitle--wrapper"]').should(have.text(book.name))
-        browser.element('div[data-test-id="cart__bookCardAuthor--wrapper"]').should(have.text(book.author))
-        browser.element('div[data-test-id="cart__bookCardDiscount--wrapper"]').should(have.text(book.price))
+        browser.element('[data-test-id="cart__bookCardTitle--wrapper"]').should(have.text(book.name))
+        browser.element('[data-test-id="cart__bookCardAuthor--wrapper"]').should(have.text(book.author))
+        browser.element('[data-test-id="cart__bookCardDiscount--wrapper"]').should(have.text(book.price))
         return self
 
     def adding_books_to_cart(self):
-        browser.element('button[data-test-id="book__addToCartButton--desktop"]').should(be.visible).click()
-        browser.element('div.Modal-module__content__header_3fkP_ > div > div > svg > use').should(be.visible).click()
+        browser.element('[data-test-id="book__addToCartButton--desktop"]').should(be.visible).click()
+        browser.driver.refresh()
         return self
 
     def books_must_be_added_to_cart(self, book1, book2):
@@ -39,8 +39,8 @@ class BookPage:
 
     def book_must_be_added_to_favorites(self, book):
         browser.open("my-books/liked/")
-        browser.element('a[data-test-id="art__title--desktop"]').should(have.text(book.name))
-        browser.element('a[data-test-id="art__authorName--desktop"]').should(have.text(book.author))
+        browser.element('[data-test-id="art__title--desktop"]').should(have.text(book.name))
+        browser.element('[data-test-id="art__authorName--desktop"]').should(have.text(book.author))
         return self
 
     def removing_book_from_favorites(self):

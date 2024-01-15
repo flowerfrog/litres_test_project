@@ -7,8 +7,8 @@ class CartPage:
         return self
 
     def removing_book_to_cart(self):
-        browser.element('button[data-test-id="cart__listDeleteButton--desktop"] > div').should(be.visible).click()
-        browser.element('//*[@id="modal"]/div[2]/div/div/div/div/div[3]/button[1]/div/div/div').should(be.visible).click()
+        browser.element('[data-test-id="cart__listDeleteButton--desktop"]').should(be.visible).click()
+        browser.element('.Modal-module__controls_1qN-h > .Button-module__button_primary_2FaKg').should(be.visible).click()
         return self
 
     def book_must_be_removed_from_cart(self):
@@ -16,8 +16,8 @@ class CartPage:
         return self
 
     def removing_book_to_cart_and_adding_to_favorites(self):
-        browser.element('button[data-test-id="cart__listDeleteButton--desktop"] > div').should(be.visible).click()
-        browser.element('//*[@id="modal"]/div[2]/div/div/div/div/div[3]/button[2]/div/div/div').should(be.visible).click()
+        browser.element('[data-test-id="cart__listDeleteButton--desktop"] > div').should(be.visible).click()
+        browser.element('.Modal-module__controls_1qN-h > .Button-module__button_primary_2FaKg').should(be.visible).click()
         return self
 
 

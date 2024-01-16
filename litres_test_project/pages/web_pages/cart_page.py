@@ -17,7 +17,7 @@ class CartPage:
 
     def removing_book_to_cart_and_adding_to_favorites(self):
         browser.element('[data-test-id="cart__listDeleteButton--desktop"] > div').should(be.visible).click()
-        browser.element('.Modal-module__controls_1qN-h > .Button-module__button_primary_2FaKg').should(be.visible).click()
+        browser.element('.Button-module__button_secondary_2G8Ew').should(be.visible).click()
         return self
 
 

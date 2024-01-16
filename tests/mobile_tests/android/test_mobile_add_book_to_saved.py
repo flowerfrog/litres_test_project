@@ -11,7 +11,7 @@ from litres_test_project.pages.mobile_pages.book_page import book_page
 @allure.feature("Checking whether a book has been added to saved in mobile app")
 @allure.severity('normal')
 @allure.label('layer', 'mobile')
-@pytest.mark.xfail(reason="This test is unstable")
+@pytest.mark.xfail(reason="App Automate testing time has expired")
 def test_adding_book_to_saved(android_mobile_management):
 
     with allure.step('Selecting the application language'):

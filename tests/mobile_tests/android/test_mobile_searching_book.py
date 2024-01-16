@@ -10,6 +10,7 @@ from litres_test_project.pages.mobile_pages.books_to_read_page import book_searc
 @allure.feature("Checking the book search in mobile app")
 @allure.severity('normal')
 @allure.label('layer', 'mobile')
+@pytest.mark.xfail(reason="App Automate testing time has expired")
 def test_successful_searching_book(android_mobile_management):
 
     with allure.step('Selecting the application language'):
@@ -30,7 +31,7 @@ def test_successful_searching_book(android_mobile_management):
 @allure.feature("Checking the book search in mobile app")
 @allure.severity('normal')
 @allure.label('layer', 'mobile')
-@pytest.mark.xfail(reason="This test is unstable")
+@pytest.mark.xfail(reason="App Automate testing time has expired")
 def test_unsuccessful_searching_book(android_mobile_management):
 
     with allure.step('Selecting the application language'):

@@ -2,7 +2,6 @@ import allure
 import jsonschema
 from litres_test_project.helper.load_schema import load_schema
 from litres_test_project.helper.api_requests import api_put
-import logging
 
 
 @allure.epic('API. Add book to cart')
@@ -25,7 +24,3 @@ def test_adding_book_to_cart():
     jsonschema.validate(result.json(), schema)
     assert result.json()['payload']['data']['added_art_ids'] == art_ids
     assert result.json()['payload']['data']['failed_art_ids'] == []
-
-    logging.info(result.request.url)
-    logging.info(result.status_code)
-    logging.info(result.text)

@@ -2,7 +2,6 @@ import allure
 import jsonschema
 from litres_test_project.helper.load_schema import load_schema
 from litres_test_project.helper.api_requests import api_get
-import logging
 
 
 @allure.epic('API. Search')
@@ -29,10 +28,6 @@ def test_successful_searching_of_book_by_title():
     assert result.json()['payload']['data'][0]['instance']['art_type'] == 0
     assert 'Семь сестер' in result.json()['payload']['data'][0]['instance']['title']
 
-    logging.info(result.request.url)
-    logging.info(result.status_code)
-    logging.info(result.text)
-
 
 @allure.epic('API. Search')
 @allure.label("owner", "flowerfrog")
@@ -55,7 +50,3 @@ def test_unsuccessful_searching_of_book_by_title():
     assert result.status_code == 200
     jsonschema.validate(result.json(), schema)
     assert len(result.json()['payload']['data']) == 0
-
-    logging.info(result.request.url)
-    logging.info(result.status_code)
-    logging.info(result.text)

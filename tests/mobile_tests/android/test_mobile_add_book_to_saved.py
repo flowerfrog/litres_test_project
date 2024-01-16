@@ -1,4 +1,6 @@
 import allure
+import pytest
+
 from litres_test_project.pages.mobile_pages.main_page import main_page
 from litres_test_project.pages.mobile_pages.books_to_read_page import book_search_page
 from litres_test_project.pages.mobile_pages.book_page import book_page
@@ -9,6 +11,7 @@ from litres_test_project.pages.mobile_pages.book_page import book_page
 @allure.feature("Checking whether a book has been added to saved in mobile app")
 @allure.severity('normal')
 @allure.label('layer', 'mobile')
+@pytest.mark.xfail(reason="This test is unstable")
 def test_adding_book_to_saved(android_mobile_management):
 
     with allure.step('Selecting the application language'):

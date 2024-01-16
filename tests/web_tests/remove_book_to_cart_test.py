@@ -68,8 +68,5 @@ def test_removing_book_from_cart_and_adding_to_favorites():
     with allure.step("Checking that the book has been removed from cart"):
         cart_page.book_must_be_removed_from_cart()
 
-    with allure.step("Checking that the book has been removed from cart"):
-        cart_page.book_must_be_removed_from_cart()
-
     with allure.step("Checking that the book has been added to favorites"):
         book_page.book_must_be_added_to_favorites(book)
